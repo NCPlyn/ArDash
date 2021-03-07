@@ -1,0 +1,11 @@
+C:\Users\Speedy\source\repos\Ardashtest\Ardashtest\bin\Release\Ardashtest.exe.config
+C:\Users\Speedy\source\repos\Ardashtest\Ardashtest\bin\Release\Ardashtest.exe
+C:\Users\Speedy\source\repos\Ardashtest\Ardashtest\bin\Release\Ardashtest.pdb
+C:\Users\Speedy\source\repos\Ardashtest\Ardashtest\obj\Release\Ardashtest.Form1.resources
+C:\Users\Speedy\source\repos\Ardashtest\Ardashtest\obj\Release\Ardashtest.Form2.resources
+C:\Users\Speedy\source\repos\Ardashtest\Ardashtest\obj\Release\Ardashtest.Properties.Resources.resources
+C:\Users\Speedy\source\repos\Ardashtest\Ardashtest\obj\Release\Ardashtest.csproj.GenerateResource.cache
+C:\Users\Speedy\source\repos\Ardashtest\Ardashtest\obj\Release\Ardashtest.csproj.CoreCompileInputs.cache
+C:\Users\Speedy\source\repos\Ardashtest\Ardashtest\obj\Release\Ardashtest.exe
+C:\Users\Speedy\source\repos\Ardashtest\Ardashtest\obj\Release\Ardashtest.pdb
+C:\Users\Speedy\source\repos\Ardashtest\Ardashtest\obj\Release\Ardashtest.csprojAssemblyReference.cache
