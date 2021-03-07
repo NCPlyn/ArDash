@@ -13,8 +13,7 @@ import threading
 from pystray import MenuItem as item,Menu
 import pystray
 from PIL import Image
-from pynput.keyboard import Key, Controller
-keyboard = Controller()
+from bindings import ifFunc
 ansicon.load()
 
 console_toggle = True
@@ -39,12 +38,21 @@ def raise_console():
         ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(), 0)
     console_toggle = not console_toggle
 
+def threadBindApp():
+    os.system('ArDashBind.exe')
+
+def bindApp():
+    thread3 = threading.Thread(target=threadBindApp)
+    thread3.start()
+    print(bcolors.PURPLE+"[WARN]"+bcolors.ENDC+" Started ArDashBind app, killing ArDash to open COM port.")
+    os.system('taskkill /f /pid ' + str(os.getpid()))
+
 def trayIcon():
     print(bcolors.GREEN+"[INFO]"+bcolors.ENDC+" Started tray icon")
     def init_icon():
         icon = pystray.Icon('ArDash')
         icon.menu = Menu(
-            item('Show console', lambda : raise_console()), item('Exit', lambda : icon.stop()), 
+            item('Show console', lambda : raise_console()), item('Launch Bindings app', lambda : bindApp()), item('Exit', lambda : icon.stop()), 
         )
         icon.icon = Image.open("image.png")
         icon.title = 'ArDash'
@@ -80,19 +88,7 @@ def  doMain():
         try:
             x = ser.read(1)
             xx = x.decode('utf-8')
-            if(xx == "1"):
-                keyboard.press(Key.pause)
-                keyboard.release(Key.pause)
-                print(bcolors.CYAN+"[INFO]"+bcolors.ENDC+" Discord Mute/Unmute")
-            if(xx == "2"):
-                os.system('taskkill /f /im Teams.exe')
-                print(bcolors.CYAN+"[INFO]"+bcolors.ENDC+" Teams killed")
-            if(xx == "3"):
-                os.system('start "" "C:\Program Files (x86)\MSI Afterburner\MSIAfterburner.exe" -Profile2')
-                print(bcolors.CYAN+"[INFO]"+bcolors.ENDC+" GPU OC done")
-            if(xx == "4"):
-                os.system('start "" "C:\Program Files (x86)\MSI Afterburner\MSIAfterburner.exe" -Profile1')
-                print(bcolors.CYAN+"[INFO]"+bcolors.ENDC+" GPU Stock done")
+            ifFunc(xx, bcolors)
                 
         except serial.serialutil.SerialException:
             print(bcolors.RED+"[ERROR]"+bcolors.ENDC+" Device disconnected, braking out of loop")
