@@ -16,7 +16,7 @@
 ### Python side
 1. Install python3 + pip3 and add python to your PATH.
 2. Install needed packages. (For now - "pip3 install pyserial pynput ansicon")
-3. (Optional) Run the "createTask.bat", which makes the script run after user login with Administrator priviliges (to disable UAC when starting app using os.system for example)
+3. (Optional) Run the "createTask.bat" as ADMINISTRATOR, which makes the script run after user login with Administrator priviliges (to disable UAC when starting app using os.system for example)
 4. Start the main python file - "ArDash.py". Click right on the tray icon and click on the "Launch Bindings app". Which kills the pyhton script to free the serial connection.
 5. Continue to the [Wiki](https://github.com/NCPlyn/ArDash/wiki/How-to-use-Binding-creator-app) to setup the bindings.
 6. Start the ArDash again using the app and close the app
