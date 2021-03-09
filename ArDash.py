@@ -86,10 +86,9 @@ def  doMain():
 
     while True:
         try:
-            x = ser.read(1)
+            x = ser.read(2)
             xx = x.decode('utf-8')
-            ifFunc(xx, bcolors)
-                
+            ifFunc(xx, bcolors) #bindings.py
         except serial.serialutil.SerialException:
             print(bcolors.RED+"[ERROR]"+bcolors.ENDC+" Device disconnected, braking out of loop")
             break
