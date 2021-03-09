@@ -26,11 +26,11 @@
 * Make the arduino use matrix from USB NumPad
 * Create wiki pages
 * Comment code
-* Make PID easily changeable
 * Make the python code look better and *run maybe better*?
 * Add new features and make ArDash more user friendly.
 * Fix spelling mistakes if I did some
-* Properly close python when opening Binding app
+* ~~Make PID easily changeable~~
+* ~~Properly close python when opening Binding app~~
 
 ## Videos
 * Emulating keyboard: [Link](http://imgload.hys.cz/ardash/keypress.mp4)
