@@ -8,6 +8,7 @@
 ## How to use
 1. Download this repository from releases.
 2. Extract it somewhere, where it will stay. (Best probs is you user folder)
+3. [Download](http://go.microsoft.com/fwlink/?LinkId=863262) and install this .net framework for the Binding app
 ### Arduino side
 1. Open the .ino file in Arduino IDE (or anywhere else where you can compile it and upload it)
 2. Edit it to your desires (On default for now it has only four buttons) (Add more "if"s and print commands(print needs to have two numbers - like "01" or "84"))
@@ -29,6 +30,7 @@
 * Make the python code look better and *run maybe better*?
 * Add new features and make ArDash more user friendly.
 * Fix spelling mistakes if I did some
+* Properly close python when opening Binding app
 
 ## Videos
 * Emulating keyboard: [Link](http://imgload.hys.cz/ardash/keypress.mp4)
