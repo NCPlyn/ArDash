@@ -1,1 +1,1 @@
-schtasks /Create /TR "python.exe '%~dp0ArDash.py'" /TN xd /SC ONLOGON /RL HIGHEST
+schtasks /Create /TR "python.exe '%~dp0ArDash.py'" /TN ArDash /SC ONLOGON /RL HIGHEST
