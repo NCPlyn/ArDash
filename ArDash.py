@@ -72,9 +72,9 @@ def comConnect(): #Function to find COM port
             if(port.pid == int(USBPID, 16)):
                 print(bcolors.GREEN+"[INFO]"+bcolors.ENDC+" Found valid PID, connecting...")
                 return(port.device)
-        print(bcolors.PURPLE+"[WARN]"+bcolors.ENDC+" Did not found valid PID, retrying " + str(x) + " times in 5s")
+        print(bcolors.PURPLE+"[WARN]"+bcolors.ENDC+" Did not found valid PID, retrying " + str(x) + " times in 10s")
         x -= 1;
-        time.sleep(5)
+        time.sleep(10)
         if(x==0):
             print(bcolors.RED+"[ERROR]"+bcolors.ENDC+" Failed to find valid PID, terminating...")
             sys.exit()
@@ -87,7 +87,7 @@ def  doMain():
 
     while True:
         try:
-            ifFunc(ser.read(2).decode('utf-8'), bcolors) #read 2bytes from serial and pass that to function in bindings file
+            ifFunc(ser.read(1).decode('utf-8'), bcolors) #read 2bytes from serial and pass that to function in bindings file
         except serial.serialutil.SerialException: #if something happens with serial connection, break out of while loop
             print(bcolors.RED+"[ERROR]"+bcolors.ENDC+" Device disconnected, braking out of loop")
             break
