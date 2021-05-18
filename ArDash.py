@@ -1,7 +1,7 @@
 #python script to comunicate with arduino and performs actions
 #pip3 install pyserial pynput ansicon
 import ctypes
-ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(), 0)
+
 print("Hiding console window quickly")
 import serial
 import serial.tools.list_ports
@@ -53,7 +53,7 @@ def trayIcon(): #Function for tray icon
     def init_icon():
         icon = pystray.Icon('ArDash')
         icon.menu = Menu(
-            item('Show console', lambda : raise_console()), item('Launch Bindings app', lambda : bindApp()), item('Exit', lambda : icon.stop()), 
+            item('Show/Hide console', lambda : raise_console()), item('Launch Bindings app', lambda : bindApp()), item('Exit', lambda : icon.stop()), 
         )
         icon.icon = Image.open("image.png")
         icon.title = 'ArDash'
@@ -87,7 +87,7 @@ def  doMain():
 
     while True:
         try:
-            ifFunc(ser.read(1).decode('utf-8'), bcolors) #read 2bytes from serial and pass that to function in bindings file
+            ifFunc(ser.read(1).decode('utf-8'), bcolors, ser) #read 2bytes from serial and pass that to function in bindings file
         except serial.serialutil.SerialException: #if something happens with serial connection, break out of while loop
             print(bcolors.RED+"[ERROR]"+bcolors.ENDC+" Device disconnected, braking out of loop")
             break
